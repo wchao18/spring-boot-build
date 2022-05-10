@@ -36,6 +36,6 @@ allprojects {
 		}
 	}
 	configurations.all {
-		resolutionStrategy.cacheChangingModulesFor 30*60, "seconds"
+		resolutionStrategy.cacheChangingModulesFor 60*60, "seconds"
 	}
 }

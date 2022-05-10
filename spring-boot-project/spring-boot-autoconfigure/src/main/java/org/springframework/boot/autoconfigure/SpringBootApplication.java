@@ -50,10 +50,10 @@ import org.springframework.data.repository.Repository;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Documented
+@Documented //表示注解可以记录在javadoc中
 @Inherited
-@SpringBootConfiguration
-@EnableAutoConfiguration
+@SpringBootConfiguration //表示是一个配置类
+@EnableAutoConfiguration  //扫描@SpringBootApplication所在的包以及子包下的类
 @ComponentScan(excludeFilters = { @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
 		@Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) })
 public @interface SpringBootApplication {
@@ -68,6 +68,7 @@ public @interface SpringBootApplication {
 	/**
 	 * Exclude specific auto-configuration class names such that they will never be
 	 * applied.
+	 *
 	 * @return the class names to exclude
 	 * @since 1.3.0
 	 */
