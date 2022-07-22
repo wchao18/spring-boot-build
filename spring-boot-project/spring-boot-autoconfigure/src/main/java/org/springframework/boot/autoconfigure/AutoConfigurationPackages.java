@@ -119,9 +119,10 @@ public abstract class AutoConfigurationPackages {
 	 */
 	static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImports {
 
+		//metadata:@SpringBootApplication标注的元数据信息
 		@Override
 		public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
-			//默认将会扫描@SpringBootApplication标注的主配置类所在的包以及子包下所有的组件
+			//默认将会扫描@SpringBootApplication标注的主配置类所在的包以及及其子包下的所有组件
 			register(registry, new PackageImports(metadata).getPackageNames().toArray(new String[0]));
 		}
 
